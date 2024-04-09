@@ -1,72 +1,75 @@
 import React from "react";
-
+import Card from "./Card";
 function App() {
   const data = [
     {
       plan: "Free",
       price: 0,
       user: "Single User",
+      isUser:true,
       storage: "5GB",
+      isStorage:true,
       project: "Unlimited Public Projects",
+      isProject:true,
       community: "Community Access",
+      isCommunity:true,
       private: "Unlimited Private Projects",
+      isPrivate:false,
       support: "Dedicated Phone Support",
+      isSupport:false,
       domain: "Free Subdomain",
-      report: "Monthly Status Reports"
+      isDomain:false,
+      report: "Monthly Status Reports",
+      isReport:false
     },
     {
       plan: "PLUS",
       price: 9,
-      user: "5 Users",
+      user: "5 User",
+      isUser:true,
       storage: "50GB",
+      isStorage:true,
       project: "Unlimited Public Projects",
+      isProject:true,
       community: "Community Access",
+      isCommunity:true,
       private: "Unlimited Private Projects",
+      isPrivate:true,
       support: "Dedicated Phone Support",
+      isSupport:true,
       domain: "Free Subdomain",
-      report: "Monthly Status Reports"
+      isDomain:true,
+      report: "Monthly Status Reports",
+      isReport:false
     },
     {
       plan: "PRO",
       price: 49,
       user: "Unlimited Users",
+      isUser:true,
       storage: "150GB",
+      isStorage:true,
       project: "Unlimited Public Projects",
+      isProject:true,
       community: "Community Access",
+      isCommunity:true,
       private: "Unlimited Private Projects",
+      isPrivate:true,
       support: "Dedicated Phone Support",
-      domain: "Free Subdomain",
-      report: "Monthly Status Reports"
+      isSupport:true,
+      domain: "Unlimited Free Subdomain",
+      isDomain:true,
+      report: "Monthly Status Reports",
+      isReport:true
     }
   ]
   return <>
-    <section class="pricing py-5">
-      <div class="container">
-        <div class="row">
+    <section className="pricing py-5">
+      <div className="container">
+        <div className="row">
           {
-            data.map((e) => {
-              return <div class="col-lg-4">
-                <div class="card mb-5 mb-lg-0">
-                  <div class="card-body">
-                    <h5 class="card-title text-muted text-uppercase text-center">{e.plan}</h5>
-                    <h6 class="card-price text-center">${e.price}<span class="period">/month</span></h6>
-                    <hr />
-                    <ul class="fa-ul">
-                      <li><span class="fa-li"><i class="fas fa-check"></i></span>{e.user}</li>
-                      <li><span class="fa-li"><i class="fas fa-check"></i></span>{e.storage}Users</li>
-                      <li><span class="fa-li"><i class="fas fa-check"></i></span>{e.project}</li>
-                      <li><span class="fa-li"><i class="fas fa-check"></i></span>{e.community}</li>
-                      <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>{e.private}</li>
-                      <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>{e.support}</li>
-                      <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>{e.domain}</li>
-                      <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>{e.report}</li>
-                    </ul>
-                    <div class="d-grid">
-                      <a href="#" class="btn btn-primary text-uppercase">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            data.map((e,i) => {
+              return <Card details={e} key={i}/>
             })
           }
         </div>
