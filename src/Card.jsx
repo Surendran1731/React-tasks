@@ -26,3 +26,4 @@ function Card({ details }) {
 }
 
 export default Card;
+
